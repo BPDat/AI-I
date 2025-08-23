@@ -1,0 +1,41 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+  &.idle {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-color: #1f2937;
+  }
+  &.recording {
+    background: #dc2626;
+    color: white;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
+  }
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.label {
+  letter-spacing: 0.2px;
+}

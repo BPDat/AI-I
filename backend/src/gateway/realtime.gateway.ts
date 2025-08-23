@@ -57,9 +57,9 @@ export class RealtimeGateway {
   }
   // Nhận audio chunk (binary)
   @SubscribeMessage('audio')
-  onAudio(@MessageBody() chunl: Buffer, @ConnectedSocket() client: Socket) {
+  onAudio(@MessageBody() chunk: Buffer, @ConnectedSocket() client: Socket) {
     console.log(
-      `Audio chunk received: ${EncodedAudioChunk.length} bytes (from ${client.id})`,
+      `Audio chunk received: ${chunk.length} bytes (from ${client.id})`,
     );
     // Tạm thời echo lại → sau này sẽ gửi transcript
     client.emit('transcript', {
